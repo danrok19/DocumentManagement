@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom right, #ff7f50, #6a5acd);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaztp.HistoryController">
+   <children>
+      <SplitPane dividerPositions="0.29292929292929293" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom right, #ff7f50, #6a5acd);">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="800.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="120.0">
+                           <children>
+                              <Button fx:id="SortId" minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onAction="#goSortById" text="Sortuj po ID">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></Button>
+                              <Button fx:id="SortDate" minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onAction="#goSortByDate" text="Sortuj po DATACH" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <Label minWidth="610.0" text="Lista Dokumentów">
+                           <padding>
+                              <Insets left="180.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font></Label>
+                        <Button fx:id="switchToBuilder" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToBuilder" text="Dodaj" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom right, #ff7f50, #6a5acd); -fx-border-color: black;">
+               <children>
+                  <VBox prefHeight="300.0" prefWidth="800.0">
+                     <children>
+                        <HBox prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs1" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD1" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs2" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD2" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs3" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD3" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs4" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD4" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs5" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD5" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: LIGHTGREY;">
+                           <children>
+                              <Label fx:id="docs6" minWidth="600.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#switchActionD6" text="Szczegóły">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button mnemonicParsing="false" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="20.0" prefWidth="200.0">
+                           <padding>
+                              <Insets left="650.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="goBack" mnemonicParsing="false" onAction="#goBackFunction" text="&lt;-">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="goNext" mnemonicParsing="false" onAction="#goNextFunction" text="-&gt;">
+                                 <HBox.margin>
+                                    <Insets top="8.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+          </AnchorPane>
+        </items>
+      </SplitPane>
+
+   </children>
+</AnchorPane>

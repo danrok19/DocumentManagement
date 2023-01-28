@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaztp.PurchaseDocBuilderController">
+   <children>
+      <SplitPane dividerPositions="0.2" prefHeight="200.0" prefWidth="800.0">
+         <items>
+            <ListView fx:id="listView" prefHeight="198.0" prefWidth="257.0" />
+            <VBox minHeight="-Infinity" prefHeight="400.0" prefWidth="700.0">
+               <children>
+                  <HBox minHeight="-Infinity" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Rodzaj dokumentu: ">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="choiceBoxTypeDoc" prefWidth="150.0" />
+                        <Button fx:id="submitType" mnemonicParsing="false" onAction="#setDocType" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+                  <HBox minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Id dokumentu:">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="spinnerDocId" prefHeight="25.0" prefWidth="173.0" />
+                        <Label fx:id="chosenTypeLabel">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin></Label>
+                        <Spinner fx:id="spinnerSpecificId" prefHeight="25.0" prefWidth="173.0" />
+                        <Button fx:id="submitIds" mnemonicParsing="false" onAction="#setDocIds" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Data zakupu: ">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="buyPicker">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                        <Label fx:id="deliveryLabel" text="Data dostarczenia:">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="deliveryPicker" />
+                        <Button mnemonicParsing="false" onAction="#setDocDates" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Dane kupującego">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="dataLabel1" text="Imię">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="textField1" />
+                        <Label fx:id="dataLabel2" text="Nazwisko">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="textField2" />
+                        <Button mnemonicParsing="false" onAction="#setBuyerDatas" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="addNextButton" mnemonicParsing="false" onAction="#addNextProduct" text="Dodaj nowy produkt">
+                     <VBox.margin>
+                        <Insets left="200.0" />
+                     </VBox.margin>
+                  </Button>
+                  <HBox>
+                     <children>
+                        <ChoiceBox fx:id="choiceBox1" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></ChoiceBox>
+                        <Button fx:id="addNextButton1" mnemonicParsing="false" onAction="#submitNextProduct" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                        <ChoiceBox fx:id="choiceBox2" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin></ChoiceBox>
+                        <Button fx:id="addNextButton2" mnemonicParsing="false" onAction="#submitNext2Product" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="choiceBox3" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></ChoiceBox>
+                        <Button fx:id="addNextButton3" mnemonicParsing="false" onAction="#submitNext3Product" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                        <Spinner fx:id="spinnerPrice">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin></Spinner>
+                        <Button fx:id="addNextButton4" mnemonicParsing="false" onAction="#submitNext4Product" text="Zatwierdź">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Spinner fx:id="spinnerSalePrice" minWidth="-Infinity" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Spinner>
+                        <Button fx:id="submitSalePrice" mnemonicParsing="false" onAction="#submitSale" text="Dodaj zniżkę rabatową">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Spinner fx:id="spinnerCodePrice" minWidth="-Infinity" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                        </Spinner>
+                        <Button fx:id="submitCodePrice" mnemonicParsing="false" onAction="#submitCode" text="Dodaj zniżkę wyprzedarzową">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="submitFinalButton" mnemonicParsing="false" onAction="#submitFinalProduct" text="Dodaj produkt do listy">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="200.0" top="15.0" />
+                     </VBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#submitDocFinal" text="Zakończ tworzenie dokumentu">
+                     <VBox.margin>
+                        <Insets left="175.0" />
+                     </VBox.margin>
+                  </Button>
+               </children></VBox>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

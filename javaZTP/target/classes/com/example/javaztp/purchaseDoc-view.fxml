@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaztp.PurchaseDocController">
+   <children>
+      <VBox minHeight="-Infinity" minWidth="800.0" prefHeight="600.0" prefWidth="100.0">
+         <children>
+            <HBox minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="docType" minWidth="-Infinity" text="Typ Dokumentu">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding></Label>
+                  <VBox minWidth="205.0" prefHeight="200.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="300.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label minWidth="-Infinity" prefWidth="110.0" text="Data wystawienia: ">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="issueDate" minWidth="-Infinity" prefWidth="170.0" text=" data" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0">
+                           <children>
+                              <Label minWidth="-Infinity" prefWidth="150.0" text="Data świadczenia usług:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="executeDate" minWidth="-Infinity" prefWidth="150.0" text=" data" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox style="-fx-background-color: LIGHTGREY;">
+               <children>
+                  <Label text="Numer dokumentu: ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="docNr" text="numer">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <Label text="SPRZEDAWCA">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="ComputerStuff.PL" />
+                        <Label text="ul. Osiedlowa 1" />
+                        <Label text="15-001" />
+                        <Label text="NIP: 987654321" />
+                        <Label text="e-mail: firmaComputerStaff@gmail.com" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <Label text="Nabywca">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="buyerData" text="Dane nabywcy" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="250.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Netto" />
+                        <Label fx:id="nettoPrice" text="Cena netto" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="VAT" />
+                        <Label fx:id="vatPrice" text="Suma VAT" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Brutto" />
+                        <Label fx:id="bruttoPrice" text="Cena brutto" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="400.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="listView" minHeight="-Infinity" minWidth="750.0" prefHeight="256.0" prefWidth="750.0" text="Label">
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <Label text="________________________________________">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Osoba upoważniona do odbioru">
+                           <padding>
+                              <Insets left="25.0" />
+                           </padding></Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <Label text="___________________________________________" />
+                        <Label text="Osoba upowazniona do wystawienia">
+                           <VBox.margin>
+                              <Insets left="12.0" />
+                           </VBox.margin></Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
