@@ -1,18 +1,17 @@
 package com.example.javaztp;
 
-import java.time.LocalDate;
+import com.example.javaztp.models.PurchaseDoc;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 public class DbSingleton {
     private static DbSingleton instance;
-    private ArrayList<PurchaseDoc> bazaDanych;
+    private ArrayList<PurchaseDoc> dataBase = new ArrayList<PurchaseDoc>();;
 
-    DbSingleton() {
-        bazaDanych = new ArrayList<PurchaseDoc>();
-    }
+    private DbSingleton() {}
 
     public static DbSingleton getInstance() {
+        //jezeli do tej pory nie zostala pobrana ani razu instancja to tworzymy
         if (instance == null) {
             instance = new DbSingleton();
         }
@@ -20,10 +19,15 @@ public class DbSingleton {
     }
 
     public void addDoc(PurchaseDoc doc) {
-        bazaDanych.add(doc);
+        //dodanie dokumentu do listy dokumentow
+        dataBase.add(doc);
+    }
+    public void deleteDoc(PurchaseDoc doc){
+        dataBase.remove(doc);
     }
 
     public ArrayList<PurchaseDoc> getBazaDanych() {
-        return bazaDanych;
+        return dataBase;
     }
+
 }

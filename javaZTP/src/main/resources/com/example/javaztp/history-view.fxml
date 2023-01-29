@@ -58,7 +58,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete1" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
@@ -81,7 +81,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete2" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
@@ -104,7 +104,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete3" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
@@ -127,7 +127,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete4" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
@@ -150,7 +150,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete5" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
@@ -173,7 +173,7 @@
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>
-                              <Button mnemonicParsing="false" text="Usuń">
+                              <Button mnemonicParsing="false" onAction="#switchActionDelete6" text="Usuń">
                                  <HBox.margin>
                                     <Insets top="8.0" />
                                  </HBox.margin></Button>

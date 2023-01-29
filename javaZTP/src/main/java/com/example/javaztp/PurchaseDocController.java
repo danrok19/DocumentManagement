@@ -1,15 +1,10 @@
 package com.example.javaztp;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.javaztp.models.Invoice;
+import com.example.javaztp.models.PurchaseDoc;
+import com.example.javaztp.models.Receipt;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 public class PurchaseDocController{
     private Receipt docR = null;
@@ -54,19 +49,44 @@ public class PurchaseDocController{
     private Label bruttoPrice;
     @FXML
     private Label listView;
+    @FXML
+    private Label buyerLabel;
 
+    @FXML
+    private Label signLineBuyer;
+    @FXML
+    private Label signLineSeller;
+
+    @FXML
+    private Label discountLabel;
+    @FXML
+    private Label discountLabelUnder;
+
+    @FXML
+    private Label signBuyer;
+    @FXML
+    private Label signSeller;
 
     public void fillFields(){
         if(this.docR != null){
             docType.setText("Paragon");
+            buyerLabel.setVisible(false);
+            buyerData.setVisible(false);
             issueDate.setText(docR.getDate().toString());
             executeDate.setText("--------");
             docNr.setText(docR.getStringReceiptNr());
-            buyerData.setText(docR.getBuyerData());
             nettoPrice.setText(docR.getNettoPrice());
             bruttoPrice.setText(docR.getBruttoPrice());
             vatPrice.setText("23%");
             listView.setText(this.orderData);
+            discountLabel.setText("Zniżka");
+            discountLabelUnder.setText(docR.getDiscount());
+            signLineBuyer.setVisible(false);
+            signLineSeller.setVisible(false);
+            signBuyer.setVisible(false);
+            signSeller.setVisible(false);
+            discountLabel.setVisible(true);
+            discountLabelUnder.setVisible(true);
         }
         else if(this.docI != null){
             docType.setText("Faktura");
@@ -78,6 +98,14 @@ public class PurchaseDocController{
             bruttoPrice.setText(docI.getBruttoPrice());
             vatPrice.setText(docI.getTax());
             listView.setText(this.orderData);
+            discountLabel.setText("Zniżka");
+            discountLabelUnder.setText(docI.getDiscount());
+            signLineBuyer.setVisible(true);
+            signLineSeller.setVisible(true);
+            signBuyer.setVisible(true);
+            signSeller.setVisible(true);
+            discountLabel.setVisible(true);
+            discountLabelUnder.setVisible(true);
         }
     }
 

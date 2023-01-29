@@ -85,7 +85,7 @@
                   </VBox>
                   <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
                      <children>
-                        <Label text="Nabywca">
+                        <Label fx:id="buyerLabel" text="Nabywca">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -121,6 +121,12 @@
                         <Label fx:id="bruttoPrice" text="Cena brutto" />
                      </children>
                   </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="discountLabel" text="Label" />
+                        <Label fx:id="discountLabelUnder" text="Label" />
+                     </children>
+                  </VBox>
                </children>
                <padding>
                   <Insets left="400.0" />
@@ -133,13 +139,13 @@
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
+                  <VBox fx:id="signs" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
                      <children>
-                        <Label text="________________________________________">
+                        <Label fx:id="signLineBuyer" text="________________________________________">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <Label text="Osoba upoważniona do odbioru">
+                        <Label fx:id="signBuyer" text="Osoba upoważniona do odbioru">
                            <padding>
                               <Insets left="25.0" />
                            </padding></Label>
@@ -150,8 +156,8 @@
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0">
                      <children>
-                        <Label text="___________________________________________" />
-                        <Label text="Osoba upowazniona do wystawienia">
+                        <Label fx:id="signLineSeller" text="___________________________________________" />
+                        <Label fx:id="signSeller" text="Osoba upowazniona do wystawienia">
                            <VBox.margin>
                               <Insets left="12.0" />
                            </VBox.margin></Label>

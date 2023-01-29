@@ -28,7 +28,7 @@
                   </HBox>
                   <HBox minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
                      <children>
-                        <Label text="Id dokumentu:">
+                        <Label fx:id="idDocLabel" text="Id dokumentu:">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -51,7 +51,7 @@
                   </HBox>
                   <HBox minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
                      <children>
-                        <Label text="Data zakupu: ">
+                        <Label fx:id="buyDateLabel" text="Data zakupu: ">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -61,20 +61,20 @@
                               <Insets left="5.0" />
                            </HBox.margin>
                         </DatePicker>
-                        <Label fx:id="deliveryLabel" text="Data dostarczenia:">
+                        <Label fx:id="deliveryDateLabel" text="Data dostarczenia:">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Label>
                         <DatePicker fx:id="deliveryPicker" />
-                        <Button mnemonicParsing="false" onAction="#setDocDates" text="Zatwierdź">
+                        <Button fx:id="submitDateButton" mnemonicParsing="false" onAction="#setDocDates" text="Zatwierdź">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <Label text="Dane kupującego">
+                  <Label fx:id="buyerLabel1" text="Kupujący">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -84,19 +84,13 @@
                   </Label>
                   <HBox minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="dataLabel1" text="Imię">
+                        <Label fx:id="buyerLabel2" text="Dane kupującego">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Label>
                         <TextField fx:id="textField1" />
-                        <Label fx:id="dataLabel2" text="Nazwisko">
-                           <HBox.margin>
-                              <Insets left="20.0" top="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="textField2" />
-                        <Button mnemonicParsing="false" onAction="#setBuyerDatas" text="Zatwierdź">
+                        <Button fx:id="submitBuyerButton" mnemonicParsing="false" onAction="#setBuyerDatas" text="Zatwierdź">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>

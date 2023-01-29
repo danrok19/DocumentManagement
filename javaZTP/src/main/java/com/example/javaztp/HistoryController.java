@@ -1,5 +1,10 @@
 package com.example.javaztp;
 
+import com.example.javaztp.models.History;
+import com.example.javaztp.models.PurchaseDoc;
+import com.example.javaztp.models.Receipt;
+import com.example.javaztp.strategy.SortByDate;
+import com.example.javaztp.strategy.SortById;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +23,10 @@ import java.util.ResourceBundle;
 
 public class HistoryController implements Initializable {
 
-    private DbSingleton dbSingleton;
     private ArrayList<PurchaseDoc> lista;
     History historia;
     private int start = 0;
     private int end = 5;
-
 
     @FXML
     private Label docs1;
@@ -39,20 +42,18 @@ public class HistoryController implements Initializable {
     private Label docs6;
 
     public HistoryController(){
-        dbSingleton = DbSingleton.getInstance();
-        lista = dbSingleton.getBazaDanych();
         historia = new History();
-        historia.setDocuments(lista);
-
+        lista = historia.getDocs();
     }
 
+    //wyswietlanie wszystkich dokumentow
     private void start(){
         if(start < this.historia.getDocs().size()){
             if(historia.getDocs().get(start).getClass() == Receipt.class){
-                docs1.setText("Paragon-> "+"ID: "+historia.getDocs().get(start).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start).getBuyerData() + " Data: " + historia.getDocs().get(start).getDate());
+                docs1.setText("Paragon-> "+"ID: "+historia.getDocs().get(start).getStringId()+ " Data: " + historia.getDocs().get(start).getDate());
             }
             else{
-                docs1.setText("Faktura-> "+"ID: "+historia.getDocs().get(start).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start).getBuyerData() + " Data: " + historia.getDocs().get(start).getDate());
+                docs1.setText("Faktura-> "+"ID: "+historia.getDocs().get(start).getStringId()+ " Data: " + historia.getDocs().get(start).getDate());
 
             }
         }
@@ -61,10 +62,10 @@ public class HistoryController implements Initializable {
         }
         if(start+1 < this.historia.getDocs().size()){
             if(historia.getDocs().get(start+1).getClass() == Receipt.class){
-                docs2.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+1).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+1).getBuyerData() + " Data: "+ historia.getDocs().get(start+1).getDate());
+                docs2.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+1).getStringId()+ " Data: "+ historia.getDocs().get(start+1).getDate());
             }
             else{
-                docs2.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+1).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+1).getBuyerData() + " Data: "+ historia.getDocs().get(start+1).getDate());
+                docs2.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+1).getStringId()+ " Data: "+ historia.getDocs().get(start+1).getDate());
 
             }
         }
@@ -73,10 +74,10 @@ public class HistoryController implements Initializable {
         }
         if(start+2 < this.historia.getDocs().size()){
             if(historia.getDocs().get(start+2).getClass() == Receipt.class){
-                docs3.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+2).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+2).getBuyerData() + " Data: "+ historia.getDocs().get(start+2).getDate());
+                docs3.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+2).getStringId()+ " Data: "+ historia.getDocs().get(start+2).getDate());
             }
             else{
-                docs3.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+2).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+2).getBuyerData() + " Data: "+ historia.getDocs().get(start+2).getDate());
+                docs3.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+2).getStringId()+ " Data: "+ historia.getDocs().get(start+2).getDate());
 
             }
         }
@@ -85,10 +86,10 @@ public class HistoryController implements Initializable {
         }
         if(start+3 < this.historia.getDocs().size()){
             if(historia.getDocs().get(start+3).getClass() == Receipt.class){
-                docs4.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+3).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+3).getBuyerData() + " Data: "+ historia.getDocs().get(start+3).getDate());
+                docs4.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+3).getStringId()+ " Data: "+ historia.getDocs().get(start+3).getDate());
             }
             else{
-                docs4.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+3).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+3).getBuyerData() + " Data: "+ historia.getDocs().get(start+3).getDate());
+                docs4.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+3).getStringId()+ " Data: "+ historia.getDocs().get(start+3).getDate());
             }
         }
         else{
@@ -96,10 +97,10 @@ public class HistoryController implements Initializable {
         }
         if(start+4 < this.historia.getDocs().size()){
             if(historia.getDocs().get(start+4).getClass() == Receipt.class){
-                docs5.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+4).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+4).getBuyerData() + " Data: "+ historia.getDocs().get(start+4).getDate());
+                docs5.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+4).getStringId()+ " Data: "+ historia.getDocs().get(start+4).getDate());
             }
             else{
-                docs5.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+4).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+4).getBuyerData() + " Data: "+ historia.getDocs().get(start+4).getDate());
+                docs5.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+4).getStringId()+ " Data: "+ historia.getDocs().get(start+4).getDate());
 
             }
         }
@@ -108,10 +109,10 @@ public class HistoryController implements Initializable {
         }
         if(start+5 < this.historia.getDocs().size()){
             if(historia.getDocs().get(start+5).getClass() == Receipt.class){
-                docs6.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+5).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+5).getBuyerData() + " Data: "+ historia.getDocs().get(start+5).getDate());
+                docs6.setText("Paragon-> "+"ID: "+historia.getDocs().get(start+5).getStringId()+ " Data: "+ historia.getDocs().get(start+5).getDate());
             }
             else{
-                docs6.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+5).getStringId() + " "+"Kupujący: "+historia.getDocs().get(start+5).getBuyerData() + " Data: "+ historia.getDocs().get(start+5).getDate());
+                docs6.setText("Faktura-> "+"ID: "+historia.getDocs().get(start+5).getStringId()+ " Data: "+ historia.getDocs().get(start+5).getDate());
             }
         }
         else{
@@ -128,6 +129,8 @@ public class HistoryController implements Initializable {
 
     @FXML
     private Button goNext;
+
+    //nawigacja pomiedzy stronami z dokumentami
     @FXML
     public void goNextFunction(){
         if(this.lista.size() > end+1){
@@ -149,6 +152,8 @@ public class HistoryController implements Initializable {
     }
 
     @FXML Button SortId;
+
+    //wybor po czym bedziemy sortowac dokumenty
     @FXML
     public void goSortById(){
         historia.setSortStrategy(new SortById());
@@ -163,6 +168,8 @@ public class HistoryController implements Initializable {
         historia.sortDocuments();
         start();
     }
+
+
 
     @FXML
     private Button switchButton;
@@ -220,5 +227,37 @@ public class HistoryController implements Initializable {
     public void switchActionD6(){
         switchToDetails(5);
     }
+
+    @FXML
+    public void switchActionDelete1(){
+        historia.deleteDoc(this.historia.getDocs().get(start+0));
+        start();
+    }
+    @FXML
+    public void switchActionDelete2(){
+        historia.deleteDoc(this.historia.getDocs().get(start+1));
+        start();
+    }
+    @FXML
+    public void switchActionDelete3(){
+        historia.deleteDoc(this.historia.getDocs().get(start+2));
+        start();
+    }
+    @FXML
+    public void switchActionDelete4(){
+        historia.deleteDoc(this.historia.getDocs().get(start+3));
+        start();
+    }
+    @FXML
+    public void switchActionDelete5(){
+        historia.deleteDoc(this.historia.getDocs().get(start+4));
+        start();
+    }
+    @FXML
+    public void switchActionDelete6(){
+        historia.deleteDoc(this.historia.getDocs().get(start+5));
+        start();
+    }
+
 
 }
